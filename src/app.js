@@ -32,5 +32,21 @@ window.onload = function() {
     " " +
     aleatorio(when);
 
-  console.log(excusa);
+  let elementExcuse = window.document.querySelector("#excuse");
+
+  elementExcuse.innerHTML = excusa;
+
+  let excuseButton = document.querySelector("#generate-excuse");
+
+  excuseButton.addEventListener("click", () => {
+    let nuevaExcusa =
+      aleatorio(who) +
+      " " +
+      aleatorio(action) +
+      " " +
+      aleatorio(what) +
+      " " +
+      aleatorio(when);
+    elementExcuse.innerHTML = nuevaExcusa;
+  });
 };
