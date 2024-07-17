@@ -7,6 +7,7 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
+
   let who = ["The dog", "My grandma", "The mailman", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
   let what = ["my homework", "my phone", "the car"];
@@ -18,24 +19,18 @@ window.onload = function() {
     "while I was praying"
   ];
 
-  function generadorExcusas() {
-    let randomWhoIndex = Math.floor(Math.random() * who.length);
-    let randomActionIndex = Math.floor(Math.random() * action.length);
-    let randomWhatIndex = Math.floor(Math.random() * what.length);
-    let randomWhenIndex = Math.floor(Math.random() * when.length);
-
-    let randomWho = who[randomWhoIndex];
-    let randomAction = action[randomActionIndex];
-    let randomWhat = what[randomWhatIndex];
-    let randomWhen = when[randomWhenIndex];
-
-    return randomWho + " " + randomAction + " " + randomWhat + " " + randomWhen;
+  function aleatorio(lista) {
+    let numAleatorio = Math.floor(Math.random() * lista.length);
+    return lista[numAleatorio];
   }
-  function mostrarExcusa() {
-    let excuse = generadorExcusas();
-    document.getElementById("excuse").innerText = excuse;
-  }
+  let excusa =
+    aleatorio(who) +
+    " " +
+    aleatorio(action) +
+    " " +
+    aleatorio(what) +
+    " " +
+    aleatorio(when);
 
-  window.onload = mostrarExcusa;
-  console.log("Hello Rigo from the console!");
+  console.log(excusa);
 };
